@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom"
 
-
 import './App.css'
 import NavBar from "./NavBar/NavBar.jsx";
+import Registration from "./Registration/Registration.jsx";
+import DataView from "./DataView/DataView.jsx";
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
           <NavBar />
           <Routes>
               <Route path="/" element={<h1>Home</h1>} />
-              <Route path="/about" element={<h1>About</h1>} />
-              <Route path="/contact" element={<h1>Contact</h1>} />
+                <Route path="/registration" element={<Registration />} />
+                <Route path="/data-view" element={<DataView />} />
           </Routes>
       </>
   )
