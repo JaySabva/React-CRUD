@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
     const [user, setUser] = useState({
@@ -16,6 +17,7 @@ const Form = () => {
     const [profilePhoto, setprofilePhoto] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -37,6 +39,7 @@ const Form = () => {
             if (res.ok) {
                 setIsSubmitting(false);
                 alert('User registered successfully');
+                navigate('/data-view');
             } else {
                 setIsSubmitting(false);
                 alert('Something went wrong');

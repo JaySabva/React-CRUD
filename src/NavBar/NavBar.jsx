@@ -15,10 +15,10 @@ const NavBar = () => {
 
                 {/* Navigation Links */}
                 <div className="flex space-x-4">
-                    <Link to="/registration" className="text-white">User Registration</Link>
-                    <Link to="/data-view" className="text-white">User Data View</Link>
-                    <Link to="/download" className="text-white">Excel File Download</Link>
-                    <Link to="/upload" className="text-white">Upload Excel File</Link>
+                    <Link to="/registration" className="text-white hover:text-black">User Registration</Link>
+                    <Link to="/data-view" className="text-white hover:text-black">User Data View</Link>
+                    <Link to="/download" className="text-white hover:text-black">Excel File Download</Link>
+                    <Link to="/upload" className="text-white hover:text-black">Upload Excel File</Link>
                 </div>
 
             </div>
