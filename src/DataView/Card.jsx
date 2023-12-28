@@ -31,6 +31,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="name"
                     id="name"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.name}
                     onChange={(e) => setEditUser({...editUser, name: e.target.value})}
@@ -42,6 +43,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="email"
                     name="email"
                     id="email"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.email}
                     onChange={(e) => setEditUser({...editUser, email: e.target.value})}
@@ -53,6 +55,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="mobileNumber"
                     id="mobileNumber"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.mobileNumber}
                     onChange={(e) => setEditUser({...editUser, mobileNumber: e.target.value})}
@@ -64,6 +67,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="country"
                     id="country"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.country}
                     onChange={(e) => setEditUser({...editUser, country: e.target.value})}
@@ -75,6 +79,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="state"
                     id="state"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.state}
                     onChange={(e) => setEditUser({...editUser, state: e.target.value})}
@@ -86,6 +91,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="city"
                     id="city"
+                    required
                     className="block w-full p-2 border rounded
                     border-gray-600"
                     value={editUser.city}
@@ -98,6 +104,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="address"
                     id="address"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.address}
                     onChange={(e) => setEditUser({...editUser, address: e.target.value})}
@@ -109,6 +116,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="aadharnumber"
                     id="aadharnumber"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.aadharnumber}
                     onChange={(e) => setEditUser({...editUser, aadharnumber: e.target.value})}
@@ -120,6 +128,7 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     type="text"
                     name="pancard"
                     id="pancard"
+                    required
                     className="block w-full p-2 border rounded border-gray-600"
                     value={editUser.pancard}
                     onChange={(e) => setEditUser({...editUser, pancard: e.target.value})}
@@ -135,11 +144,11 @@ const EditForm  = ({user, onCancel, onEdit}) => {
                     onChange={(e) => setprofilePhoto(e.target.files[0])}
                 />
             </div>
-            <div className="grid grid-cols-1 gap-4">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            <div className="mt-4">
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
                         type="submit">Submit
                 </button>
-                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2"
                         onClick={onCancel}>Cancel
                 </button>
             </div>
