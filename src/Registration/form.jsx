@@ -9,11 +9,11 @@ const Form = () => {
         state: '',
         city: '',
         address: '',
-        aadharNumber: '',
+        aadharnumber: '',
         pancard: ''
     });
 
-    const [profilePic, setProfilePic] = useState(null);
+    const [profilePhoto, setprofilePhoto] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -27,9 +27,9 @@ const Form = () => {
             for (const key in user) {
                 formData.append(key, user[key]);
             }
-            formData.append('profilePic', profilePic);
+            formData.append('profilePhoto', profilePhoto);
 
-            const res = await fetch('https://userreg.free.beeceptor.com', {
+            const res = await fetch('http://localhost:3000/user/register', {
                 method: 'POST',
                 body: formData,
             });
@@ -151,10 +151,10 @@ const Form = () => {
                         type="text"
                         required
                         className="border border-gray-300 p-2 rounded"
-                        value={user.aadharNumber}
+                        value={user.aadharnumber}
                         placeholder={"Enter your aadhar number"}
                         pattern="^[0-9]{12}$"
-                        onChange={(e) => setUser({...user, aadharNumber: e.target.value})}
+                        onChange={(e) => setUser({...user, aadharnumber: e.target.value})}
                     />
                 </div>
 
@@ -177,9 +177,9 @@ const Form = () => {
                         type="file"
                         required
                         className="border border-gray-300 p-2 rounded"
-                        value={user.profilePic}
+                        value={user.profilePhoto}
                         placeholder={"Enter your profile pic"}
-                        onChange={(e) => setProfilePic(e.target.files[0])}
+                        onChange={(e) => setprofilePhoto(e.target.files[0])}
                     />
                 </div>
 

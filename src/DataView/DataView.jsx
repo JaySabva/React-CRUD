@@ -11,7 +11,7 @@ const DataView = () => {
         const getUsers = async () => {
             try {
                 console.log('Fetching data from API');
-                const res = await fetch('http://demo3287291.mockable.io/', {
+                const res = await fetch('http://localhost:3000/user/users', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
@@ -19,8 +19,10 @@ const DataView = () => {
                 });
                 if (res.ok) {
                     const data = await res.json();
+                    console.log('Data fetched successfully');
+                    console.log(data);
                     setIsLoading(false);
-                    setUsers(data);
+                    setUsers(data.users);
                 }
             } catch (error) {
                 console.error('Error:', error.message);
@@ -41,7 +43,7 @@ const DataView = () => {
                 {!isLoading && users.length === 0 && <p>No users found</p>}
                 {!isLoading && users.length > 0 && <p>Found {users.length} users</p> && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pl-10 pr-10">
                     {users.map((user) => (
-                        <Card key={user.id} user={user}/>
+                        <Card key={user._id} user={user}/>
                     ))}
                 </div>}
 
